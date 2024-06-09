@@ -1,15 +1,19 @@
 
-let arr = [4,5,2,25]
+let arr = [4, 5, 2, 25]
 
-function nextGreater(){
+function nextGreater() {
 
-    return arr.map((value) => {
-        const indexNumber = arr.findIndex(a => a == value);
-        console.log(indexNumber);
-        const nextGreaterValue = arr.slice(indexNumber).find(b => b > value);
-        console.log(nextGreaterValue);
-        return nextGreaterValue !== undefined ? nextGreaterValue : -1;
-    });
-
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j <= i + 1; j++) {
+            if (arr[i + 1] > arr[i]) {
+                arr[i] = arr[i + 1]
+            } else if (arr[i + 1] === undefined) {
+                arr[i] = -1
+            } else {
+                arr[i] = arr[i+1]
+            }
+        }
+    }
+    return arr
 }
 console.log(nextGreater());

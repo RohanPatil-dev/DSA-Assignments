@@ -5,8 +5,11 @@ function arrs() {
 
     console.log(arr);
 
-    for (let j = arr.length - 1; j > 0; j--) {
+    // approach 1
+    console.log("approach 1 is :",arr[arr.length-2]);
 
+    // approach 2
+    for (let j = arr.length - 1; j > 0; j--) {
         return arr[j - 1]
     }
 }
